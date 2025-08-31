@@ -73,32 +73,63 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.AllowTrailingCommas = true;
     });
 
-// CORS (Development: allow any origin)
+// CORS Configuration
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("DevCors", policy =>
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    if (builder.Environment.IsDevelopment())
+    {
+        options.AddPolicy("DevCors", policy =>
+            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    }
+    else
+    {
+        options.AddPolicy("ProdCors", policy =>
+            policy.WithOrigins("https://your-frontend-domain.com") // Update with your actual frontend domain
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowCredentials());
+    }
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+// Auto-migrate database in production
+if (app.Environment.IsProduction())
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Classroom Booking API v1");
-    c.RoutePrefix = string.Empty;
-    // Inject custom JS to auto-fill startsAt/endsAt in Swagger only
-    c.InjectJavascript("/swagger/custom.js");
-});
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        context.Database.Migrate();
+    }
+}
 
-// Enable serving static files (for custom Swagger JS)
-app.UseStaticFiles();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Classroom Booking API v1");
+        c.RoutePrefix = string.Empty;
+        // Inject custom JS to auto-fill startsAt/endsAt in Swagger only
+        c.InjectJavascript("/swagger/custom.js");
+    });
+    
+    // Enable serving static files (for custom Swagger JS)
+    app.UseStaticFiles();
+}
 
 app.UseHttpsRedirection();
 
 // Enable CORS before authentication
-app.UseCors("DevCors");
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors("DevCors");
+}
+else
+{
+    app.UseCors("ProdCors");
+}
 
 app.UseAuthentication();
 app.UseAuthorization();
