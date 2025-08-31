@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClassroomBookingSystem.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a15d1593e33231da5a64268fb8bb91a3f34b49b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0391717e6210e7899e0f48d53c6c9b219e9743ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClassroomBookingSystem.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClassroomBookingSystem.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
