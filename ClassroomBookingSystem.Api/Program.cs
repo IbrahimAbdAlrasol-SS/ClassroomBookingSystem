@@ -67,7 +67,11 @@ builder.Services.AddAuthorization();
 // DI services
 builder.Services.AddScoped<JwtTokenService>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.AllowTrailingCommas = true;
+    });
 
 var app = builder.Build();
 
@@ -77,7 +81,12 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Classroom Booking API v1");
     c.RoutePrefix = string.Empty;
+    // Inject custom JS to auto-fill startsAt/endsAt in Swagger only
+    c.InjectJavascript("/swagger/custom.js");
 });
+
+// Enable serving static files (for custom Swagger JS)
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

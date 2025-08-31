@@ -9,6 +9,7 @@ F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\ClassroomBookingSystem.Infrastructure.AssemblyInfoInputs.cache
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\ClassroomBookingSystem.Infrastructure.AssemblyInfo.cs
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\ClassroomBookingSystem.Infrastructure.csproj.CoreCompileInputs.cache
+F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\ClassroomBookingSystem.Infrastructure.sourcelink.json
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\Classroo.03A3D901.Up2Date
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\ClassroomBookingSystem.Infrastructure.dll
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Infrastructure\obj\Debug\net9.0\refint\ClassroomBookingSystem.Infrastructure.dll

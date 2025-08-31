@@ -2,7 +2,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassroomBookingSystem.Api.Contracts;
 
-public class CreateBookingRequest
+public class CreateBookingTeacherRequest
+{
+    [Required]
+    public int RoomId { get; set; }
+
+    [Required, MaxLength(200)]
+    public string Title { get; set; } = string.Empty;
+
+    [Required]
+    public DateTime StartsAt { get; set; }
+
+    [Required]
+    public DateTime EndsAt { get; set; }
+}
+
+public class CreateBookingAdminRequest
 {
     [Required]
     public int RoomId { get; set; }
@@ -16,8 +31,8 @@ public class CreateBookingRequest
     [Required]
     public DateTime EndsAt { get; set; }
 
-    // Teacher: يُستخرج من التوكن. Admin: يمكن تمريره هنا.
-    public int? TeacherId { get; set; }
+    [Required]
+    public int TeacherId { get; set; }
 }
 
 public class UpdateBookingRequest

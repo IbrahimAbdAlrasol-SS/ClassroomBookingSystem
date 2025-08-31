@@ -22,3 +22,9 @@ public class AvailableRoomsQuery
     [Required]
     public DateTime To { get; set; }
 }
+
+public class SetRoomActiveRequest
+{
+    [Required]
+    public bool IsActive { get; set; }
+}

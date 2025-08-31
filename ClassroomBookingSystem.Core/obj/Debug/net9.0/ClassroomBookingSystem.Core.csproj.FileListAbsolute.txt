@@ -5,6 +5,7 @@ F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\Classroom
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\ClassroomBookingSystem.Core.AssemblyInfoInputs.cache
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\ClassroomBookingSystem.Core.AssemblyInfo.cs
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\ClassroomBookingSystem.Core.csproj.CoreCompileInputs.cache
+F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\ClassroomBookingSystem.Core.sourcelink.json
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\ClassroomBookingSystem.Core.dll
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\refint\ClassroomBookingSystem.Core.dll
 F:\ClassroomBookingSystem\ClassroomBookingSystem.Core\obj\Debug\net9.0\ClassroomBookingSystem.Core.pdb
