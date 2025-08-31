@@ -1,0 +1,63 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+README.md
+التعليمات.MD
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build outputs
+**/bin/
+**/obj/
+**/out/
+**/publish/
+
+# Dependencies
+**/node_modules/
+**/packages/
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Flutter/Dart specific
+ClassroomBookingApp/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.metadata
+**/flutter_*.log
+**/pubspec.lock
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Test files
+**/test/
+**/tests/
+
+# Docker files (avoid recursive copying)
+Dockerfile*
+.dockerignore

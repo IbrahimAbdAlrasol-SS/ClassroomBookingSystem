@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for classroom-booking-api
+
+app = "classroom-booking-api"
+primary_region = "fra"
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
+[env]
+  ASPNETCORE_ENVIRONMENT = "Production"
+  ASPNETCORE_URLS = "http://+:8080"
+
+[[statics]]
+  guest_path = "/app/wwwroot"
+  url_prefix = "/static/"
